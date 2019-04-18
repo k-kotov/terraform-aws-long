@@ -1,0 +1,76 @@
+{
+    "_meta": {
+        "schema_version": "v1beta0-7.15.0"
+    },
+    "farm": {
+        "name": "te-a1e1-base-openstack",
+        "description": "",
+        "project": {
+            "id": "30c59dba-fc9b-4d0f-83ec-4b5043b12f72"
+        },
+        "timezone": "Europe\/Moscow",
+        "launchOrder": "simultaneous",
+        "variables": []
+    },
+    "roles": [
+        {
+            "alias": "base-ubuntu1604-devel",
+            "role": {
+                "name": "base-ubuntu1604-devel"
+            },
+            "cloudPlatform": "openstack",
+            "cloudLocation": "RegionOne",
+            "availabilityZones": [],
+            "instanceType": {
+                "id": "88fe4695-ed15-4d36-a18c-1e2be17e954a"
+            },
+            "launchIndex": 0,
+            "advancedConfiguration": {
+                "disableAgentIptablesManagement": false,
+                "disableAgentNtpManagement": false,
+                "disableAgentHostnameManagement": false,
+                "abortInitializationOnOrchestrationFailure": true,
+                "rebootAfterHostInit": false
+            },
+            "scaling": {
+                "enabled": true,
+                "maxInstances": 2,
+                "minInstances": 1,
+                "rules": []
+            },
+            "networking": {
+                "networks": [
+                    {
+                        "id": "7192e3f9-02c1-40cb-bf47-322741dac713",
+                        "associatePublicIpAddress": true,
+                        "cloudFeatures": {
+                            "type": "OpenstackNetworkCloudFeatures",
+                            "floatingIpPool": {
+                                "id": "d45558cd-9eb1-47ad-9eab-15f4177e0a32"
+                            }
+                        }
+                    }
+                ]
+            },
+            "cloudFeatures": {
+                "type": "OpenstackCloudFeatures",
+                "disableKeyPairManagement": false
+            },
+            "security": {
+                "securityGroups": [
+                    {
+                        "name": "default"
+                    },
+                    {
+                        "name": "scalr.container.ip-pool"
+                    }
+                ]
+            },
+            "variables": [],
+            "orchestration": {
+                "rules": []
+            },
+            "storage": []
+        }
+    ]
+}
