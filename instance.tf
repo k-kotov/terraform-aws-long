@@ -1,7 +1,7 @@
 
 
  module "win111" {
-   source  = "./test"
+   source  = "./tests"
    }
  
    
