@@ -4,7 +4,7 @@
    source  = "./tests"
    }
  
- module "win1 {
+ module "win1" {
    source  = "./1"
    }
    
